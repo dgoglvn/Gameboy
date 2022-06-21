@@ -1,0 +1,228 @@
+/* gives all elements 0 margin, 0 padding, and a box sizing of border box */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* this is the entire gameboy itself. I set the size, the margin sets it in the center,
+gave it a black border and border radius, background color, and a black box shadow
+around it */
+.gameboy {
+    height: 550px;
+    width: 350px;
+    margin: 150px auto;
+    border: 7px solid black;
+    border-radius: 20px 20px 75px 20px;
+    background-color: lightseagreen;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+/* this is the background around the display, i set the size, margin centers it
+horizontally, set the position to relative so i can move it within the gameboy div,
+moved it 50px from the top, gave it a black border and a border radius, and a 
+gray background color */
+.display-container {
+    height: 200px;
+    width: 290px;
+    margin: 0 auto;
+    position: relative;
+    top: 50px;
+    border: 7px solid black;
+    border-radius: 14px 14px 40px 14px;
+    background-color: gray;
+}
+
+/* this is the actual display, set the size, margin centers it horizontally, gave it a 
+relative position so it's within the display-container, 20px from the top, gave it a
+black border and a background color */
+.display {
+    height: 145px;
+    width: 185px;
+    margin: 0 auto;
+    position: relative;
+    top: 20px;
+    border: 7px solid black;
+    background-color: rgb(197, 218, 211);
+}
+
+/* this is the triangle, known as the 'triforce', on the display. to create a triangle,
+the size comes from the size of the borders. i set width and height to 0 so the borders
+collapse come together. I set the left and right border to transparent and that leaves
+the yellow bottom border, which is an up triangle. i set it 20px from the top and 30px
+from the left */
+.big-triangle {
+    width: 0px;
+    height: 0px;
+    position: relative;
+    border-left: 60px solid transparent;
+    border-right: 60px solid transparent;
+    border-bottom: 90px solid gold;
+    top: 20px;
+    left: 30px;
+}
+
+/* same is going on here as the big triangle except it's a down triangle with a white
+top border. it is 49px from the top and 32px from the right */
+.small-triangle {
+    width: 0;
+    height: 0;
+    position: relative;
+    border-top: 40px solid #fff;
+    border-left: 32px solid transparent;
+    border-right: 32px solid transparent;
+    top: 49px;
+    right: 32px;
+}
+
+/* this is the circle around the cross-shaped d-pad. i set the size, 100px from the top
+and 25px from the left, gave it a black border and the 50% border radius makes it a 
+circle. i gave it a greenish background and i set the z index to 0 because i want to
+stack a few divs on top */
+.dpad-container {
+    height: 120px;
+    width: 120px;
+    position: relative;
+    top: 100px;
+    left: 25px;
+    border: 5px solid black;
+    border-radius: 50%;
+    background-color: #11807a;
+    z-index: 0;
+}
+
+/* this is targeting multiple divs, the up, down, right, left buttons and also a middle
+part. i set the size, gave it a black border, margin centers all of them horizontally
+so i can move them from that center position, and gave them a gray background color */
+.dpad-up,
+.dpad-left,
+.dpad-right,
+.dpad-down,
+.dpad-mid {
+    width: 30px;
+    height: 30px;
+    position: relative;
+    border: 4px solid black;
+    margin: 0 auto;
+    background-color: gray;
+}
+
+/* 15px from the top and bottom border is transparent */
+.dpad-up {
+    top: 15px;
+    border-bottom: transparent;
+ }
+
+ /* 28px from the right, 11px from the top and right border is transparent */
+ .dpad-left {
+     right: 28px;
+     top: 11px;
+     border-right: transparent;
+ }
+
+ /* i set the size, positioned it from the top and left, gave it a z index of 1 to stack
+ on top of the 'dpad-container' div, and border is transparent */
+ .dpad-mid {
+    width: 27px;
+    height: 22px;
+   top: -92px;
+   left: -2px;
+   z-index: 1;
+   border: transparent;
+}
+
+ /* this is the circle in the middle. i set the size, margin centers is horizontally,
+top position is negative because it was initially lower than its center position, gave
+it a black border, 50% radius, gray background, and z index of 2 to stack on top of 
+the 'dpad-mid' div*/
+.dpad-mid-circle {
+     width: 17px;
+     height: 17px;
+     margin: 0 auto;
+     position: relative;
+     top: -73px;
+     border: 4px solid black;
+     border-radius: 50%;
+     background-color: gray;
+     z-index: 2;
+}
+
+/* positioned it from the top and left and left border is transparent */
+.dpad-right {
+     top: -19px;
+    left: 26px;
+    border-left: transparent;
+}
+
+/* positioned it from the bottom and top border is transparent */
+.dpad-down {
+     bottom: 23px;
+     border-top: transparent;
+}
+
+/* this is the contianer that hold the red buttons. i set the size, positioned it from 
+the left and top, gave it a black border, border is round on the left and right sides, 
+the transform property rotates it, and gave it a background color*/
+.btn-container {
+     width: 150px;
+     height: 60px;
+     position: relative;
+     left: 53%;
+     top: 20px;
+     border: 5px solid black;
+     border-radius: 50px;
+     transform: rotate(-20deg);
+     background-color: #11807a;
+}
+
+/* this targets the two buttons. i set the size, gave them a black border, 50% radius,
+gave them a absolute position to be able to move them freely, and a red background color, and a shadow
+around the button */
+.a-btn,
+.b-btn {
+     width: 40px;
+     height: 40px;
+     border: 4px solid black;
+     border-radius: 50%;
+     position: absolute;
+     background-color: red;
+     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+ /* positioned it from the left and top */
+.a-btn {
+     left: 85px;
+     top: 4px;
+}
+
+ /* positioned it from the left and top */
+.b-btn {
+    left: 15px;
+    top: 4px;
+}
+
+ /* i am selecting the two gray buttons at the bottom. i set the size, gave them a black border, a border 
+ radius, 150px from the bottom, rotated them, and gave them a gray background, and a shadow around the 
+ button */
+.select-btn,
+.start-btn {
+     width: 50px;
+     height: 20px;
+     border: 4px solid black;
+     border-radius: 50px;
+     position: absolute;
+     bottom: 150px;
+     transform: rotate(-30deg);
+     background-color: gray;
+     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+/* positioned if from the left */
+ .select-btn {
+     left: 50.5%;
+ }
+
+ /* positioned it from the left */
+ .start-btn {
+     left: 45.5%;
+ }
